@@ -5,15 +5,24 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 
 function App() {
-  
-  let counter = 0
+  let [counter ,setcounter]= useState(0)
   const addcounter = ()=>{
       console.log("counter values is " , counter);
-      counter = counter +1
+      if (counter >=20) {
+        console.log("value can not be more than 20");
+        
+      }else{
+        setcounter(counter+1)
+      }
   }
+
   const minuscounter = ()=>{
       console.log("counter values is " , counter);
-      counter = counter - 1
+      if (counter==0) {
+        console.log("value can not be less than 0");
+        
+      }else{setcounter(counter-1)}
+      
   }
   return (
     <>
